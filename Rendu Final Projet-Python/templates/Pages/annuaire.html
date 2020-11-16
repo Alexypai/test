@@ -1,0 +1,28 @@
+<body>
+    <label for="site-search">Chercher un employé</label>
+    <form action="http://127.0.0.1:4000/Annuaire" method="GET">
+        <input type="search" id="site-search" name="nom" aria-label="Chercher un employé">
+        <button>Recherche</button>
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Matricule</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Sexe</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for U in donneesEmploye %}
+                <tr>
+                    <td>{{ U[0] }}</td>
+                    <td>{{ U[1] }}</td>
+                    <td>{{ U[2] }}</td>
+                    <td>{{ U[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</body>
+{% include 'Common_scripts/footer.html' %}
